@@ -10,11 +10,16 @@ public class Solution {
         List<String> listResult = new ArrayList<>();
         for (String element : str1) {
             char[] ch = element.toCharArray();
-            for (char c : ch) {
-                if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)) {
-                    String result = new String(ch);
-                    listResult.add(i, result);
-                    i++;
+            for (char cyrillic : ch) {
+                if ((cyrillic >= 'А' && cyrillic <= 'Я') || (cyrillic >= 'а' && cyrillic <= 'я')) {
+                    for (char latin : ch) {
+                        if ((latin >= 'A' && latin <= 'Z') || (latin >= 'a' && latin <= 'z')) {
+                            String result = new String(ch);
+                            listResult.add(i, result);
+                            i++;
+                            break;
+                        }
+                    }
                 }
             }
         }
