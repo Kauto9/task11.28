@@ -21,6 +21,7 @@ public class Solution {
                         }
                     }
                 }
+                break;
             }
         }
         String delim = " ";
