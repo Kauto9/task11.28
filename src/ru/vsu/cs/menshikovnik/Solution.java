@@ -6,7 +6,6 @@ import java.util.List;
 public class Solution {
     public static String findElement(String text) {
         String[] str1 = text.split(" ");
-        int i = 0;
         List<String> listResult = new ArrayList<>();
         for (String element : str1) {
             boolean check = false;
@@ -16,8 +15,7 @@ public class Solution {
                     if ((cyrillic >= 'А' && cyrillic <= 'Я') || (cyrillic >= 'а' && cyrillic <= 'я')) {
                         if ((latin >= 'A' && latin <= 'Z') || (latin >= 'a' && latin <= 'z')) {
                             String result = new String(ch);
-                            listResult.add(i, result);
-                            i++;
+                            listResult.add(result);
                             check = true;
                             break;
                         }
